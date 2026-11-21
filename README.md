@@ -1,5 +1,7 @@
 # share-cards
 
+[![test](https://github.com/VinVirtual/share-cards/actions/workflows/test.yml/badge.svg)](https://github.com/VinVirtual/share-cards/actions/workflows/test.yml) [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Link-preview images and per-page share tags for every page of a website, from one HTML template.
 
 ![Four example cards: two editorial, one technical, one minimal](examples/site/cards-preview/contact-sheet.png)
