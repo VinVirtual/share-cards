@@ -5,6 +5,7 @@
   "type": "module",
   "license": "MIT",
   "author": "Lashvin Manimaran",
+  "repository": "github:VinVirtual/share-cards",
   "bin": { "cards": "lib/cli.mjs" },
   "exports": {
     ".": "./lib/index.mjs",

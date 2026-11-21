@@ -18,7 +18,7 @@ It is packaged as a [Claude Code](https://claude.com/claude-code) skill (`SKILL.
 | Stage | What happens | Sample |
 |---|---|---|
 | 1. List | You list each page once in `cards.config.json`. | `{ "path": "/visit", "title": "Visit \| Quillmoss Tool Library", "cardTitle": "Find the *front desk*" }` |
-| 2. Render | A headless browser fills the template and saves a JPEG per page. Unchanged cards are skipped by content hash. | `drew /visit -> dist/og/visit.jpg (53 KB)` |
+| 2. Render | A headless browser fills the template and saves a JPEG per page. Unchanged cards are skipped by content hash (config text, template, the local files its `src` and `href` point at, art, logo, fonts). Files reached only from inside CSS are not tracked: use `--force` after changing one. | `drew /visit -> dist/og/visit.jpg (53 KB)` |
 | 3. Inject | The built page shell is copied once per page with that page's tags filled in. | `<meta property="og:image" content="https://quillmoss.example/og/visit.jpg" />` |
 | 4. Verify | Sizes, weights, lengths, escaping and addresses are checked before you deploy. | `4 pages checked, cards total 268 KB, built pages checked` |
 
@@ -37,7 +37,7 @@ No fonts are bundled. The built-in templates use system font stacks, and nothing
 ## Install
 
 ```bash
-git clone <this repository> ~/.claude/skills/share-cards
+git clone https://github.com/VinVirtual/share-cards ~/.claude/skills/share-cards
 npm i -g playwright-core          # or: npm i -D playwright-core in your project
 ~/.claude/skills/share-cards/cards check
 ```
