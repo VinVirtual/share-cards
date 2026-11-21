@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+  editorial: warm paper, heavy serif headline, a masthead rule and one loud accent.
+  Slots: site, domain, logo, kicker, title, description, art.
+  Variables (set them in "theme"): accent, background, text, muted, fontDisplay, fontBody.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>editorial card</title>
+    <style>
+      :root {
+        --accent: #d8401f;
+        --background: #f2ebdd;
+        --text: #17130e;
+        --muted: #5b5245;
+        --font-display: 'Iowan Old Style', 'Palatino Linotype', Palatino, Charter, 'Bitstream Charter', P052, Georgia, 'DejaVu Serif', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', 'Noto Sans', 'Liberation Sans', Arial, sans-serif;
+      }
+      * { box-sizing: border-box; margin: 0; }
+      [hidden] { display: none !important; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body { position: relative; background: var(--background); color: var(--text); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+
+      .masthead { position: absolute; left: 64px; right: 380px; top: 42px; height: 58px; display: flex; align-items: center; gap: 14px; border-bottom: 4px solid var(--text); padding-bottom: 16px; }
+      .has-art .masthead { right: 504px; }
+      .masthead img { height: 34px; width: auto; }
+      .site { font-size: 19px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+      .address { margin-left: auto; padding-left: 12px; font-size: 17px; font-weight: 500; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+
+      .copy { position: absolute; left: 64px; top: 126px; bottom: 50px; width: 790px; display: flex; flex-direction: column; overflow: hidden; }
+      .has-art .copy { width: 632px; }
+      .kicker { display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); flex: none; }
+      .kicker::before { content: ''; width: 44px; height: 8px; background: var(--accent); flex: none; }
+      h1 { margin-top: auto; padding-top: 18px; font-family: var(--font-display); font-weight: 700; font-size: 104px; line-height: 0.99; letter-spacing: -0.025em; text-wrap: balance; overflow-wrap: break-word; }
+      h1 em { font-style: italic; color: var(--accent); }
+      .description { margin-top: 20px; font-family: var(--font-display); font-style: italic; font-size: 27px; line-height: 1.28; color: var(--muted); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; flex: none; }
+
+      /* with art: a full-height picture on the right, behind a strip of accent */
+      .art { position: absolute; right: 0; top: 0; width: 440px; height: 630px; }
+      .art::before { content: ''; position: absolute; left: -16px; top: 0; width: 16px; height: 100%; background: var(--accent); }
+      .art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .no-art .art { display: none; }
+
+      /* without art: an accent disc and an ink ring, cropped by the corner */
+      .disc, .ring { position: absolute; border-radius: 50%; display: none; }
+      .no-art .disc, .no-art .ring { display: block; }
+      .disc { width: 480px; height: 480px; right: -130px; top: -150px; background: var(--accent); }
+      .ring { width: 250px; height: 250px; right: 56px; top: 210px; border: 4px solid var(--text); }
+    </style>
+  </head>
+  <body>
+    <div class="disc"></div>
+    <div class="ring"></div>
+    <div class="art"><img data-slot="art" alt="" /></div>
+    <header class="masthead">
+      <img data-slot="logo" alt="" />
+      <span class="site" data-slot="site"></span>
+      <span class="address" data-slot="domain"></span>
+    </header>
+    <main class="copy" data-fit-box>
+      <p class="kicker" data-slot="kicker"></p>
+      <h1 data-slot="title" data-fit="50 104"></h1>
+      <p class="description" data-slot="description" data-fit-drop></p>
+    </main>
+  </body>
+</html>
