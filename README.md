@@ -276,6 +276,9 @@ cards test
 - **Previews are cached** by the apps that show them, sometimes for days. `versionImages` changes the image address when a card changes; the app decides when to fetch the page again.
 - The HTML is edited with pattern matching, not a full parser. It expects ordinary `<meta>`, `<link>` and `<title>` tags in the head; a share tag inside an HTML comment would also be filled.
 
+- The browser is started with its sandbox on. As root, in Docker or in some CI runners Chrome refuses to start that way; `cards check` shows the error. Render on your own machine and commit the images, or run as a normal user.
+- `share-cards` is not on npm. Install it from the clone (`npm i -D /path/to/share-cards`) to use the Vite plugin.
+
 ## Licence
 
 MIT, see [LICENSE](LICENSE). The example drawings in `examples/site/art` were made for this repository and are under the same licence.
