@@ -1,0 +1,45 @@
+{
+  "siteUrl": "https://quillmoss.example",
+  "siteName": "Quillmoss Tool Library",
+  "template": "editorial",
+  "logo": "art/logo.svg",
+  "imageDir": "dist/og",
+  "imageUrlPath": "/og",
+  "dist": "dist",
+  "pages": [
+    {
+      "path": "/",
+      "title": "Quillmoss Tool Library",
+      "cardTitle": "Borrow the tool, *skip the shelf*",
+      "description": "A made-up neighbourhood tool library, used as the share-cards example site: borrow what you need and bring it back.",
+      "cardDescription": "A made-up neighbourhood tool library. Borrow what you need, then bring it back.",
+      "kicker": "Example site",
+      "art": "art/pegboard.svg"
+    },
+    {
+      "path": "/catalogue",
+      "title": "Catalogue | Quillmoss Tool Library",
+      "cardTitle": "What is on the wall",
+      "description": "The made-up catalogue: saws, levels, drills and ladders, each with a plain note on what it is good for.",
+      "kicker": "Catalogue"
+    },
+    {
+      "path": "/how-it-works",
+      "title": "How borrowing works | Quillmoss Tool Library",
+      "cardTitle": "Reserve, collect, *return*",
+      "description": "Three steps from reserving a tool to handing it back, written for the share-cards example site.",
+      "kicker": "How it works",
+      "template": "technical"
+    },
+    {
+      "path": "/visit",
+      "title": "Visit | Quillmoss Tool Library",
+      "cardTitle": "Find the *front desk*",
+      "description": "Directions & opening hours for the made-up front desk, and what \"bring it back clean\" means.",
+      "cardDescription": "Directions and opening hours for the made-up front desk.",
+      "kicker": "Visit",
+      "template": "minimal",
+      "art": "art/street.svg"
+    }
+  ]
+}

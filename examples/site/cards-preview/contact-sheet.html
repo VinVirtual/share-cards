@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Card contact sheet</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      body { width: 1240px; padding: 36px; background: #24262b; color: #eef0f3; font: 16px/1.4 ui-monospace, 'SF Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace; }
+      h1 { font-size: 15px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #a9afba; margin-bottom: 24px; }
+      .sheet { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 28px; }
+      figure img, .missing { display: block; width: 100%; height: auto; aspect-ratio: 1200 / 630; border-radius: 4px; box-shadow: 0 10px 30px rgb(0 0 0 / 0.45); }
+      .missing { display: grid; place-items: center; border: 1px dashed #6d7480; color: #a9afba; box-shadow: none; }
+      figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 10px; font-size: 14px; }
+      figcaption span { color: #a9afba; white-space: nowrap; }
+      figcaption b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Quillmoss Tool Library · 4 cards · 1200×630</h1>
+    <div class="sheet">
+      <figure>
+        <img src="../dist/og/home.jpg" width="1200" height="630" alt="" />
+        <figcaption><b>/</b><span>editorial · 81 KB</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../dist/og/catalogue.jpg" width="1200" height="630" alt="" />
+        <figcaption><b>/catalogue</b><span>editorial · 53 KB</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../dist/og/how-it-works.jpg" width="1200" height="630" alt="" />
+        <figcaption><b>/how-it-works</b><span>technical · 82 KB</span></figcaption>
+      </figure>
+      <figure>
+        <img src="../dist/og/visit.jpg" width="1200" height="630" alt="" />
+        <figcaption><b>/visit</b><span>minimal · 53 KB</span></figcaption>
+      </figure>
+    </div>
+  </body>
+</html>

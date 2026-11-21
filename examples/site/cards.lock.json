@@ -1,0 +1,21 @@
+{
+  "note": "Written by share-cards. Commit it so unchanged cards are not drawn again.",
+  "cards": {
+    "catalogue": {
+      "path": "/catalogue",
+      "hash": "798c9824c23ea3a7a96d4fb4a1764a2081ef56615a082062c09c9ade1e1324c5"
+    },
+    "home": {
+      "path": "/",
+      "hash": "0d2cf66b42a668fb93f6d4c190f552746d6a94bcac563ec7b694a9d228cc2e04"
+    },
+    "how-it-works": {
+      "path": "/how-it-works",
+      "hash": "2bc93b55ca778a83c4cd707a3169f91906a524a47031da55a3c43de70fac3c02"
+    },
+    "visit": {
+      "path": "/visit",
+      "hash": "debb4bb1559f62ccba23c12ed5247e6c38ff7e0035abc6623b9cc78019c07c5d"
+    }
+  }
+}

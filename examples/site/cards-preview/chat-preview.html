@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>How the links unfurl</title>
+    <style>
+      :root { --paper: #efe9df; --ink: #1c1a17; --soft: #6c655b; }
+      * { box-sizing: border-box; margin: 0; }
+      body { background: var(--paper); color: var(--ink); font: 16px/1.45 system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; padding: clamp(20px, 4vw, 56px); }
+      .intro { max-width: 760px; margin-bottom: 40px; }
+      .intro h1 { font: 700 clamp(30px, 4vw, 46px)/1.05 'Iowan Old Style', Palatino, Charter, 'Bitstream Charter', Georgia, serif; letter-spacing: -0.02em; }
+      .intro p { margin-top: 12px; color: var(--soft); max-width: 62ch; }
+      .threads { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 440px)); gap: 40px; align-items: start; }
+      .thread { border-radius: 30px; padding: 0 16px 24px; overflow: hidden; box-shadow: 0 30px 60px -30px rgb(28 26 23 / 0.5); }
+      .thread.light { --bg: #f4f5f7; --bubble: #ffffff; --card: #f0f1f4; --fg: #15171a; --dim: #676c75; --edge: #dfe1e6; --out: #dcebff; }
+      .thread.dark { --bg: #111417; --bubble: #1e2328; --card: #171b1f; --fg: #eef0f2; --dim: #98a0aa; --edge: #2c3238; --out: #1d3a57; }
+      .thread { background: var(--bg); color: var(--fg); }
+      .thread header { display: flex; align-items: center; gap: 12px; margin: 0 -16px 20px; padding: 16px 20px; border-bottom: 1px solid var(--edge); }
+      .thread header small { display: block; color: var(--dim); font-size: 13px; }
+      .avatar { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--out); font-weight: 700; }
+      .message { margin: 0 0 18px auto; width: min(100%, 372px); background: var(--out); border-radius: 20px 20px 6px 20px; padding: 8px; }
+      .link { padding: 4px 8px 8px; font-size: 15px; text-decoration: underline; text-underline-offset: 2px; overflow-wrap: anywhere; }
+      .unfurl { background: var(--bubble); border-radius: 14px; overflow: hidden; border: 1px solid var(--edge); transition: transform 150ms ease-out; }
+      .message:hover .unfurl { transform: translateY(-2px); }
+      .unfurl img, .missing { display: block; width: 100%; height: auto; aspect-ratio: 1.91 / 1; object-fit: cover; }
+      .missing { display: grid; place-items: center; color: var(--dim); background: var(--card); }
+      .text { padding: 10px 12px 12px; }
+      .host { font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; color: var(--dim); }
+      .title { margin-top: 2px; font-weight: 650; line-height: 1.25; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+      .desc { margin-top: 3px; font-size: 14px; line-height: 1.35; color: var(--dim); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+      time { display: block; padding: 6px 8px 0; font-size: 12px; text-align: right; color: var(--dim); }
+      @media (prefers-reduced-motion: reduce) { .unfurl { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <div class="intro">
+      <h1>How the links unfurl</h1>
+      <p>An imitation of a chat app's link preview for each page of Quillmoss Tool Library: the card, the site, the title and the description, cut to two lines. Real apps crop and trim in their own ways, so read this as a sanity check and then test one real link.</p>
+    </div>
+    <main class="threads">
+      <section class="thread light" aria-label="light chat">
+        <header><span class="avatar">Q</span><div><b>Link check</b><small>light theme</small></div></header>
+        <article class="message">
+          <p class="link">https://quillmoss.example/</p>
+          <div class="unfurl">
+            <img src="../dist/og/home.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Quillmoss Tool Library</p>
+              <p class="desc">A made-up neighbourhood tool library, used as the share-cards example site: borrow what you need and bring it back.</p>
+            </div>
+          </div>
+          <time>/</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/catalogue</p>
+          <div class="unfurl">
+            <img src="../dist/og/catalogue.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Catalogue | Quillmoss Tool Library</p>
+              <p class="desc">The made-up catalogue: saws, levels, drills and ladders, each with a plain note on what it is good for.</p>
+            </div>
+          </div>
+          <time>/catalogue</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/how-it-works</p>
+          <div class="unfurl">
+            <img src="../dist/og/how-it-works.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">How borrowing works | Quillmoss Tool Library</p>
+              <p class="desc">Three steps from reserving a tool to handing it back, written for the share-cards example site.</p>
+            </div>
+          </div>
+          <time>/how-it-works</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/visit</p>
+          <div class="unfurl">
+            <img src="../dist/og/visit.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Visit | Quillmoss Tool Library</p>
+              <p class="desc">Directions &amp; opening hours for the made-up front desk, and what "bring it back clean" means.</p>
+            </div>
+          </div>
+          <time>/visit</time>
+        </article>
+      </section>
+      <section class="thread dark" aria-label="dark chat">
+        <header><span class="avatar">Q</span><div><b>Link check</b><small>dark theme</small></div></header>
+        <article class="message">
+          <p class="link">https://quillmoss.example/</p>
+          <div class="unfurl">
+            <img src="../dist/og/home.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Quillmoss Tool Library</p>
+              <p class="desc">A made-up neighbourhood tool library, used as the share-cards example site: borrow what you need and bring it back.</p>
+            </div>
+          </div>
+          <time>/</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/catalogue</p>
+          <div class="unfurl">
+            <img src="../dist/og/catalogue.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Catalogue | Quillmoss Tool Library</p>
+              <p class="desc">The made-up catalogue: saws, levels, drills and ladders, each with a plain note on what it is good for.</p>
+            </div>
+          </div>
+          <time>/catalogue</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/how-it-works</p>
+          <div class="unfurl">
+            <img src="../dist/og/how-it-works.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">How borrowing works | Quillmoss Tool Library</p>
+              <p class="desc">Three steps from reserving a tool to handing it back, written for the share-cards example site.</p>
+            </div>
+          </div>
+          <time>/how-it-works</time>
+        </article>
+        <article class="message">
+          <p class="link">https://quillmoss.example/visit</p>
+          <div class="unfurl">
+            <img src="../dist/og/visit.jpg" width="1200" height="630" alt="" />
+            <div class="text">
+              <p class="host">quillmoss.example</p>
+              <p class="title">Visit | Quillmoss Tool Library</p>
+              <p class="desc">Directions &amp; opening hours for the made-up front desk, and what "bring it back clean" means.</p>
+            </div>
+          </div>
+          <time>/visit</time>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
