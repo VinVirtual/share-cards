@@ -1,0 +1,17 @@
+{
+  "name": "share-cards",
+  "version": "0.1.0",
+  "description": "Link-preview images and per-page share tags for every page of a website, from one HTML template.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Lashvin Manimaran",
+  "bin": { "cards": "lib/cli.mjs" },
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./vite": "./vite-plugin.mjs"
+  },
+  "engines": { "node": ">=18" },
+  "scripts": { "test": "node lib/cli.mjs test" },
+  "peerDependencies": { "playwright-core": ">=1.40" },
+  "peerDependenciesMeta": { "playwright-core": { "optional": true } }
+}

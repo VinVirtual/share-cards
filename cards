@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# share-cards launcher: cards <command> ...   (run "cards help" for the list)
+exec node "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/lib/cli.mjs" "$@"
